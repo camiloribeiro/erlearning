@@ -1,0 +1,12 @@
+Max Subsequence
+===============
+
+This is the first exercise I am trying to solve. We started this exercise in Clojure in a Dojo at ThoughtWorks 
+
+The main goal here is to write a program that read a sequence of numbers and get the biggest increasing sequecence.
+
+Example: 3 8 4 2 6 7 0 1 9
+
+In the example above we wold select the following sequence 3 4 6 7 9
+
+So, get it done
