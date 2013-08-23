@@ -1,0 +1,15 @@
+Reverse Polish Notation Calculator
+===================================
+
+Create a simple calculator that uses the Reverse Polish Notation
+
+Example of simple expression:
+
+1 2 +
+It means 1 + 2 and should return 3
+
+exemple of complex operation:
+
+4 6 + 5 * 2 / 2 -
+It means 4 + 6 = 10, so 10 * 5 = 50, so 50 / 2 = 25, so 25 -2 = 23.
+
