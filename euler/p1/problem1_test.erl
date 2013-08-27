@@ -5,5 +5,6 @@ multiples_test() ->
   ?assertEqual(23, problem1:multiples(10)),
   ?assertEqual(33, problem1:multiples(11)),
   ?assertEqual(3, problem1:multiples(5)),
-  ?assertEqual(3, problem1:multiples(4)).
+  ?assertEqual(3, problem1:multiples(4)),
+  ?assertEqual(233168, problem1:multiples(1000)).
 
