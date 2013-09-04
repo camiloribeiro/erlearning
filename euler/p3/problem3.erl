@@ -2,7 +2,14 @@
 -compile(export_all).
 
 factorize(Number) ->  
-  primes(Number).
+  List = invert_list(primes(round(math:sqrt(Number)))),
+  factorize(List, Number).
+
+factorize([H|T], Number) ->  
+  if
+    Number rem H == 0 -> H;
+    true -> factorize(T, Number)
+  end.
 
 primes(Num) ->
   List = create_list(Num),
@@ -12,13 +19,6 @@ primes([H|T], New_list) ->
   if T /= [] ->
     primes(T, is_prime(H) ++  New_list);
     true -> New_list
-  end.
-
-
-max_primes([H|T]) ->
-  if H > 1 ->
-    max_primes([H - 1|[H|T]]);
-    true -> [H|T]
   end.
 
 invert_list([H|T]) ->
