@@ -13,8 +13,27 @@ max_primes([H|T]) ->
     max_primes([H - 1|[H|T]]);
     true -> [H|T]
   end.
+invert_list([H|T]) ->
+  invert_list([], [H|T]).
+invert_list(New, [H|T]) ->
+  Last = last(T),
+  if 
+    H /= Last -> 
+      invert_list([H] ++ New, T);
+    true -> New
+  end;
+invert_list(New, []) ->
+  New.
+last([]) ->
+  true;
+last([H|T]) ->
+  if 
+    T == [] -> [H|T];
+    true -> last(T)
+  end.
 is_prime(Num, [H|T]) ->
   if 
-    Num rem H == 0 -> false;
-    true -> is_prime(Num, T)
+    T == [] -> true;
+    Num rem H /= 0 -> is_prime(Num, T);
+    true -> false
   end.
