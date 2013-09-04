@@ -2,7 +2,7 @@
 -compile(export_all).
 
 factorize(Number) ->  
-  List = invert_list(primes(round(math:sqrt(Number)))),
+  List = primes(round(math:sqrt(Number))),
   factorize(List, Number).
 
 factorize([H|T], Number) ->  
@@ -17,23 +17,9 @@ primes(Num) ->
 
 primes([H|T], New_list) ->
   if T /= [] ->
-    primes(T, is_prime(H) ++  New_list);
+      primes(T, New_list ++ is_prime(H));
     true -> New_list
   end.
-
-invert_list([H|T]) ->
-  invert_list([], [H|T]).
-
-invert_list(New, [H|T]) ->
-  Last = last(T),
-  if 
-    H /= Last -> 
-      invert_list([H] ++ New, T);
-    true -> New
-  end;
-
-invert_list(New, []) ->
-  New.
 
 last([]) ->
   true;
@@ -43,6 +29,9 @@ last([H|T]) ->
     T == [] -> [H|T];
     true -> last(T)
   end.
+
+is_prime(2) ->
+  [2];
 
 is_prime(Num) ->
   List = create_list(Num - 1),
@@ -58,9 +47,21 @@ is_prime(Num, [H|T]) ->
 create_list(Num) ->
   create_list([],Num).
 
+create_list(List, 1) ->
+  List ++ [2,1];
+
 create_list(List, Num) ->
+  Foo = return_odd_num(Num),
   if 
-    Num > 0 ->
-      create_list(List ++ [Num], Num - 1);
-      true -> List
+    Foo > 1 ->
+      create_list(List ++ [return_odd_num(Num)], Num - 1);
+      true -> 
+        create_list(List, Num - 1)
     end.
+
+return_odd_num(Num) ->
+  if 
+    Num rem 2 /= 0 ->
+      Num;
+    true -> 0
+  end.

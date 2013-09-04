@@ -1,14 +1,15 @@
 -module(problem3_test).
 -include_lib("eunit/include/eunit.hrl").
 
-invert_list_test() ->
-  ?assertEqual([3,2,1], problem3:invert_list([1,2,3])).
-
 last_test() ->
   ?assertEqual([3], problem3:last([1,2,3])).
 
 create_list_test() ->
-  ?assertEqual([10,9,8,7,6,5,4,3,2,1], problem3:create_list(10)).
+  ?assertEqual([9,7,5,3,2,1], problem3:create_list(10)).
+
+return_odd_num_test() ->
+  ?assertEqual(0, problem3:return_odd_num(10)),
+  ?assertEqual(11, problem3:return_odd_num(11)).
 
 is_prime_test() ->
   ?assertEqual([2],  problem3:is_prime(2)), 
@@ -27,6 +28,6 @@ factorize_test() ->
   ?assertEqual(29, problem3:factorize(13195)).
 
 primes_test() ->
-  ?assertEqual([2,3,5,7], problem3:primes(10)),
-  ?assertEqual([2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97], problem3:primes(100)).
+  ?assertEqual([7,5,3,2], problem3:primes(10)),
+  ?assertEqual([97,89,83,79,73,71,67,61,59,53,47,43,41,37,31,29,23,19,17,13,11,7,5,3,2], problem3:primes(100)).
 
