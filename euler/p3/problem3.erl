@@ -31,9 +31,20 @@ last([H|T]) ->
     T == [] -> [H|T];
     true -> last(T)
   end.
+is_prime(Num) ->
+  List = create_list(Num - 1),
+  is_prime(Num, List).
 is_prime(Num, [H|T]) ->
   if 
     T == [] -> true;
     Num rem H /= 0 -> is_prime(Num, T);
     true -> false
   end.
+create_list(Num) ->
+  create_list([],Num).
+create_list(List, Num) ->
+  if 
+    Num > 0 ->
+      create_list(List ++ [Num], Num - 1);
+      true -> List
+    end.
