@@ -15,9 +15,16 @@ primes(Num) ->
   List = create_list(Num),
   primes(List, []).
 
+primes([], New_list) ->
+  New_list;
+
 primes([H|T], New_list) ->
-  if T /= [] ->
-      primes(T, New_list ++ is_prime(H));
+  Foo = is_prime(H),
+  if 
+    Foo == 0 ->
+      primes(T, New_list);
+    T /= [] ->
+      primes(T, [Foo|New_list]);
     true -> New_list
   end.
 
@@ -31,7 +38,7 @@ last([H|T]) ->
   end.
 
 is_prime(2) ->
-  [2];
+  2;
 
 is_prime(Num) ->
   List = create_list(Num - 1),
@@ -39,22 +46,26 @@ is_prime(Num) ->
 
 is_prime(Num, [H|T]) ->
   if 
-    T == [] -> [Num];
+    T == [] -> Num;
     Num rem H /= 0 -> is_prime(Num, T);
-    true -> []
+    true -> 0
   end.
 
 create_list(Num) ->
   create_list([],Num).
 
 create_list(List, 1) ->
-  List ++ [2,1];
+  [2|List];
+  %create_list([2|List], 0);
+
+create_list(List, 0) ->
+  [1|List];
 
 create_list(List, Num) ->
   Foo = return_odd_num(Num),
   if 
     Foo > 1 ->
-      create_list(List ++ [return_odd_num(Num)], Num - 1);
+      create_list([Foo|List], Num - 1);
       true -> 
         create_list(List, Num - 1)
     end.
