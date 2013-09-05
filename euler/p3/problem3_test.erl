@@ -24,6 +24,7 @@ is_prime_test() ->
   ?assertEqual(11,  problem3:is_prime(11)).
 
 factorize_test() ->
+  ?assertEqual(1, problem3:factorize(3)),
   ?assertEqual(5, problem3:factorize(360)),
   ?assertEqual(29, problem3:factorize(13195)).
 

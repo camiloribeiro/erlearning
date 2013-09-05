@@ -5,6 +5,9 @@ factorize(Number) ->
   List = primes(round(math:sqrt(Number))),
   factorize(List, Number).
 
+factorize([], Number) ->  
+  round(Number / Number);
+
 factorize([H|T], Number) ->  
   if
     Number rem H == 0 -> H;
