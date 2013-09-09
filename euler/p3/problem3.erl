@@ -31,15 +31,6 @@ primes([H|T], New_list) ->
     true -> New_list
   end.
 
-last([]) ->
-  true;
-
-last([H|T]) ->
-  if 
-    T == [] -> [H|T];
-    true -> last(T)
-  end.
-
 is_prime(2) ->
   2;
 
