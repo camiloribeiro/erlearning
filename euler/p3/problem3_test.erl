@@ -2,4 +2,4 @@
 -include_lib("eunit/include/eunit.hrl").
 
 create_list_test() ->
-  ?assertEqual([1,2,3,4,5,6,7,8,9,10], problem3:create_list(10)).
+  ?assertEqual([2,3,4,5,6,7,8,9,10], problem3:create_list(10)).
