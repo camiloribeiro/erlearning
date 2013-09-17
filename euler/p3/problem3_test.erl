@@ -1,9 +1,6 @@
 -module(problem3_test).
 -include_lib("eunit/include/eunit.hrl").
 
-last_test() ->
-  ?assertEqual([3], problem3:last([1,2,3])).
-
 create_list_test() ->
   ?assertEqual([2,3,5,7,9], problem3:create_list(10)).
 
