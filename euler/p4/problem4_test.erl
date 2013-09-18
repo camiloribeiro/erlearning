@@ -2,7 +2,7 @@
 -include_lib("eunit/include/eunit.hrl").
 
 get_palindromic_test() ->
-  ?assertEqual(9009, problem4:get_palindromic(99)).
+  ?assertEqual(906609, problem4:get_palindromic(999)).
 
 
 is_palindromic_test() ->
