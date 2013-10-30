@@ -2,7 +2,10 @@
 -include_lib("eunit/include/eunit.hrl").
 
 get_prime_at_at_test() ->
-      ?assertEqual([13,11,7,5,3,2], problem7:get_prime_at(6)).
+  {timeout, 10, 
+   [?assertEqual(10474, problem7:get_prime_at(10001)),
+    ?assertEqual(13, problem7:get_prime_at(6))]
+  }.
 
 get_next_prime_test() ->
   ?assertEqual(3, problem7:get_next_prime(2  ,[5,5])),

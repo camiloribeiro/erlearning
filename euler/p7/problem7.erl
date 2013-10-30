@@ -6,7 +6,7 @@ get_prime_at(Num) ->
 
 get_prime_at([H|T], Current, Escape) ->
   if 
-    (Current == Escape) -> [H|T];
+    (Current == Escape) -> H;
     true -> get_prime_at([get_next_prime(H, [H|T])|[H|T]], Current + 1, Escape)
   end.
 
