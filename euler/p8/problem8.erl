@@ -1,5 +1,5 @@
 -module(problem8).
--compile(export_all).
+-compile([export_all]).
 
 get_bigger_product_for(Num) -> 
   get_bigger_product_for(Num, 1, string:len(Num) - 4, 0). 
