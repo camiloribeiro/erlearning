@@ -12,3 +12,6 @@ get_sums_to_test() ->
 
 run_list_test() ->
   ?assertEqual([3,4,5], problem9:run_list([[5,6,4],[3,4,5],[1,3,6],[1,2,7]])).
+
+get_pythagorean_test() ->
+  ?assertEqual([3,4,5], problem9:get_pythagorean(12)).
