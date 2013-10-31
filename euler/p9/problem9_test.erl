@@ -15,3 +15,6 @@ run_list_test() ->
 
 get_pythagorean_test() ->
   ?assertEqual([3,4,5], problem9:get_pythagorean(12)).
+
+get_product_test() ->
+  ?assertEqual(144, problem9:get_pythagorean([3,4,5])).
