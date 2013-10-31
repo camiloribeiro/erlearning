@@ -1,5 +1,5 @@
 -module(problem8_test).
 -include_lib("eunit/include/eunit.hrl").
 
-get_five_test() ->
-  ?assertEqual("12345", problem8:get_five("123456")).
+get_all_five_possible_test() ->
+  ?assertEqual(["12345","23456"], problem8:get_all_five_possible("123456")).
