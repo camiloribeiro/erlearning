@@ -3,7 +3,8 @@
 
 get_pythagorean(Num) ->
   List = get_sums_to(Num),
-  run_list(List).
+  Item = run_list(List),
+  get_product(Item).
 
 get_product([H1,H2,H3|_]) ->
   H1 * H2 * H3.
