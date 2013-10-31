@@ -1,6 +1,13 @@
 -module(problem9).
 -compile([export_all]).
 
+get_pythagorean(Num) ->
+  List = get_sums_to(Num),
+  run_list(List).
+
+get_product([H1,H2,H3|_]) ->
+  H1 * H2 * H3.
+
 run_list([H|T]) ->
     Current = run_list_foo(H),
   if
