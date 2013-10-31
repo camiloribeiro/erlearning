@@ -1,7 +1,7 @@
 -module(problem8_test).
 -include_lib("eunit/include/eunit.hrl").
 
-get_product_test() -> 
+get_product_for_test() -> 
   ?assertEqual(32, problem8:get_product_for("22222")).
 
 get_bigger_test() ->
