@@ -2,7 +2,8 @@
 -compile(export_all).
 
 get_product_for(Num) ->
-  get_product_for(Num, 1, 1).
+  Bigger = get_bigger(Num),
+  get_product_for(Bigger, 1, 1).
 
 get_product_for(Num, Sum, Position) ->
   {Current,_} = string:to_integer(string:substr(Num, Position, 1)),
