@@ -2,4 +2,4 @@
 -compile([export_all]).
 
 is_pythagorean(NumA, NumB, NumC) ->
-    true.
+  (NumA * NumA) + (NumB * NumB) == (NumC * NumC).
