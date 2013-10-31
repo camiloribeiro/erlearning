@@ -1,4 +1,5 @@
--module(problem8).
+-module(problem9).
 -compile([export_all]).
 
-foo() -> foo. 
+is_pythagorean(NumA, NumB, NumC) ->
+    true.
