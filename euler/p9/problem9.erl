@@ -1,6 +1,21 @@
 -module(problem9).
 -compile([export_all]).
 
+run_list([H|T]) ->
+    Current = run_list_foo(H),
+  if
+    Current ->
+      H;
+    true ->
+      run_list(T)
+    end;
+
+run_list([]) ->
+    "Nada aqui bro".
+
+run_list_foo([H1,H2,H3|_]) ->
+  is_pythagorean(H1,H2,H3).
+
 is_pythagorean(NumA, NumB, NumC) ->
   (NumA * NumA) + (NumB * NumB) == (NumC * NumC).
 
