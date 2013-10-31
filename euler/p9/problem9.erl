@@ -9,9 +9,14 @@ get_sums_to(Num) ->
   
 get_sums_to(First, Second, Num, List) -> 
   Third = Num - (First + Second),
-  if
+  if 
     (Third > Second) -> 
       get_sums_to(First, Second + 1, Num, [[First, Second, Third]|List]);
-    true -> List 
+    true ->
+  if
+    ((First + Second ) >  Num ) -> List;
+    true -> 
+      get_sums_to(First + 1, First + 2, Num, List)
+      end
   end.
 
